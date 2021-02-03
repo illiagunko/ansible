@@ -1,0 +1,21 @@
+- name: Install mariaDB
+  yum:
+    name: mariadb-server
+    state: latest
+
+- name: Start mariaDB
+  service:
+    name: mariadb-server
+    state: started
+
+- name: Create a new database with name 'ecomdb'
+   mysql_db:
+     name: ecomdb
+     state: present
+
+- name: Create database user with name 'ecomuser' and password 'ecompassword' with all database privileges
+  mysql_user:
+    name: ecomuser
+    password: ecompassword
+    priv: '*.*:ALL'
+    state: present
