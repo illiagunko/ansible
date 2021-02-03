@@ -7,3 +7,17 @@
   service:
     name: firewalld
     state: started
+
+- name: Add port for mysql
+  firewalld:
+    port: 3306/tcp
+    permanent: yes
+    state: enabled
+    when: groupname == 'database_servers'
+
+- name: Add port for Apache
+  firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled
+    when: groupname == 'web_servers'
