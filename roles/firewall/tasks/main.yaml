@@ -13,11 +13,16 @@
     port: 3306/tcp
     permanent: yes
     state: enabled
-    when: groupname == 'database_servers'
+    when: 'groupname' == 'database_servers'
 
 - name: Add port for Apache
   firewalld:
     port: 80/tcp
     permanent: yes
     state: enabled
-    when: groupname == 'web_servers'
+    when: 'groupname' == 'web_servers'
+
+- name: Reload firewalld
+  service:
+    name: firewalld
+    state: reloaded
