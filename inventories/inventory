@@ -1,0 +1,5 @@
+[web_servers]
+web1 target1 ansible_host=10.2.7.40 ansible_ssh_pass=ansible
+
+[database_servers]
+db1 target2 ansible_host=10.2.7.131 ansible_ssh_pass=ansible
