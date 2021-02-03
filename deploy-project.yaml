@@ -1,5 +1,6 @@
 - hosts: all
   roles:
+    - { role: clone_project }
     - { role: mariadb }
     - { role: apache }
     - { role: firewalld }

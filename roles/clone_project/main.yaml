@@ -1,0 +1,4 @@
+- name: Clone project
+  git:
+    repo: 'https://github.com/kodekloudhub/learning-app-ecommerce.git'
+    dest:  /var/www/html/
